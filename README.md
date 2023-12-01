@@ -42,5 +42,4 @@ This project is a Kanban-style TodoList built with React and Supabase.
 
 ## Badges
 
-[![Dependencies](https://img.shields.io/david/your-username/react-kanban-todolist.svg)](https://david-dm.org/your-username/react-kanban-todolist)
-
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
