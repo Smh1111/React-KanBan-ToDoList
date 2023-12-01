@@ -26,6 +26,9 @@ dist-ssr
 *.json
 *.cjs
 
+.env
+
+
 postcss.config.js
 tailwind.config.js
 vite.config.ts
