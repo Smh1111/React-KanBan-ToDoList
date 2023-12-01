@@ -1,9 +1,7 @@
 ## React To-Do List with Supabase
-# Overview
 This project is a simple to-do list application built with React and powered by Supabase for data storage. It allows users to create, read, update, and delete tasks in a persistent database.
-# React Kanban TodoList
 
-This project is a Kanban-style TodoList built with React and Supabase.
+
 
 ## Dependencies
 
