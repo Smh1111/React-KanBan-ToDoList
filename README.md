@@ -1,57 +1,46 @@
 ## React To-Do List with Supabase
 # Overview
 This project is a simple to-do list application built with React and powered by Supabase for data storage. It allows users to create, read, update, and delete tasks in a persistent database.
+# React Kanban TodoList
 
-# Features
-- User Authentication: Utilize Supabase authentication to allow users to sign up, log in, and manage their tasks securely.
-- Real-time Updates: Leverage Supabase real-time capabilities to instantly reflect changes across all connected clients.
-- CRUD Operations: Perform CRUD (Create, Read, Update, Delete) operations on tasks stored in the Supabase database.
-- Responsive Design: Ensure a seamless user experience across various devices with a responsive design.
+This project is a Kanban-style TodoList built with React and Supabase.
 
-# Prerequisites
-- Node.js: Make sure Node.js is installed on your machine. You can download it here.
-- Supabase Account: Sign up for a free Supabase account here.
+## Dependencies
 
+- [React](https://reactjs.org/) - A JavaScript library for building user interfaces.
+- [React DOM](https://reactjs.org/docs/react-dom.html) - Entry point of the DOM-related rendering paths.
+- [Supabase JS](https://github.com/supabase/supabase-js) - The JavaScript client for Supabase.
+- [Flowbite](https://flowbite.com/) - A responsive UI design framework for building modern websites and applications.
+- [Flowbite React](https://www.npmjs.com/package/flowbite-react) - React components for Flowbite.
 
-# Getting Started
-Clone the Repository:
+### Development Dependencies
 
-bash
-Copy code
-git clone https://github.com/your-username/react-supabase-todo.git
-cd react-supabase-todo
-Install Dependencies:
+- [TypeScript](https://www.typescriptlang.org/) - A typed superset of JavaScript.
+- [Vite](https://vitejs.dev/) - A fast build tool for modern web development.
+- [ESLint](https://eslint.org/) - A pluggable and configurable linter tool.
+- [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework.
+- [Autoprefixer](https://autoprefixer.github.io/) - A PostCSS plugin to parse CSS and add vendor prefixes.
+- [PostCSS](https://postcss.org/) - A tool for transforming CSS with JavaScript plugins.
+- [React TypeScript Definitions](https://www.npmjs.com/package/@types/react) - TypeScript definitions for React.
+- [Vite React Plugin](https://github.com/vitejs/vite/tree/main/packages/plugin-react) - React support for Vite.
+- [ESLint React Hooks Plugin](https://www.npmjs.com/package/eslint-plugin-react-hooks) - ESLint plugin for React Hooks.
+- [ESLint React Refresh Plugin](https://www.npmjs.com/package/eslint-plugin-react-refresh) - ESLint plugin for React Refresh.
 
-bash
-Copy code
-npm install
-Set up Supabase:
+## Getting Started
 
-Create a new project on the Supabase Dashboard.
-Set up a new table in the Supabase database to store your to-do items.
-Configure Environment Variables:
+1. Clone the repository.
+2. Install dependencies using `npm install` or `yarn install`.
+3. Run the development server with `npm run dev`.
+4. Open your browser and visit `http://localhost:3000`.
 
-Create a .env file in the root of your project and add your Supabase credentials:
+## Scripts
 
-env
-Copy code
-REACT_APP_SUPABASE_URL=your_supabase_url
-REACT_APP_SUPABASE_KEY=your_supabase_key
-Run the Application:
+- `npm run dev`: Run the development server.
+- `npm run build`: Build the project for production.
+- `npm run lint`: Lint the project using ESLint.
+- `npm run preview`: Preview the built project.
 
-bash
-Copy code
-npm start
-The app should now be running at http://localhost:3000.
+## Badges
 
-# Project Structure
-src/components: Contains React components used in the application.
-src/services: Includes the Supabase service for interacting with the database.
-src/pages: Houses different pages of the application (e.g., Home, Login, Signup).
-src/App.js: The main entry point of the React application.
-public: Static assets and HTML template.
-Contributing
-Feel free to contribute to the project by opening issues or submitting pull requests. Your feedback and contributions are highly appreciated.
+[![Dependencies](https://img.shields.io/david/your-username/react-kanban-todolist.svg)](https://david-dm.org/your-username/react-kanban-todolist)
 
-# License
-This project is licensed under the MIT License.
