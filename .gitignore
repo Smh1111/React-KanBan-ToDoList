@@ -26,7 +26,7 @@ dist-ssr
 *.json
 *.cjs
 
-.env
+config.ts
 
 
 postcss.config.js

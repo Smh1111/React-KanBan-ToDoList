@@ -2,14 +2,11 @@
 import { useEffect, useState } from "react";
 import { createClient } from "@supabase/supabase-js";
 import TaskComponent from "./TaskComponent";
+import { REACT_APP_SUPABASE_URL, REACT_APP_SUPABASE_KEY } from "../config";
 
-
-
-const supabaseUrl: string = "https://onshivmcmawiknfqbcmv.supabase.co";
-const supabaseKey: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9uc2hpdm1jbWF3aWtuZnFiY212Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDEyNzA4ODksImV4cCI6MjAxNjg0Njg4OX0.vHyLFyVK_jvYJ1EaYjOJ_-YEus1xEw5NoYCgcgnS0XY";
-
+const supabaseUrl: string = REACT_APP_SUPABASE_URL;
+const supabaseKey: string = REACT_APP_SUPABASE_KEY;
 const supabase = createClient(supabaseUrl, supabaseKey);
-
 
 type Task = {
 	id: number;
@@ -42,8 +39,7 @@ function TaskListComponent() {
 		}
 	}
 
-
-	async function deleteTask(deleteID : number) {
+	async function deleteTask(deleteID: number) {
 		try {
 			const { data, error } = await supabase
 				.from("todolists")
@@ -52,10 +48,47 @@ function TaskListComponent() {
 			if (error) {
 				console.error(
 					"Error deleting data:",
+					data,
 					error
 				);
 			} else {
-				setTasks(tasks.filter((task) => task.id !== deleteID));
+				setTasks(
+					tasks.filter(
+						(task) =>
+							task.id !==
+							deleteID
+					)
+				);
+			}
+		} catch (error) {
+			console.error("Error:", error);
+		}
+	}
+
+	async function updateTask(updateID: number, updatedTask: string) {
+		try {
+			const { data, error } = await supabase
+				.from("todolists")
+				.update({ task: updatedTask })
+				.eq("id", updateID);
+			if (error) {
+				console.error(
+					"Error updating data:",
+					data,
+					error
+				);
+			} else {
+				// Update the existing task in the state
+				setTasks((prevTasks) =>
+					prevTasks.map((t) =>
+						t.id === updateID
+							? {
+									...t,
+									task: updatedTask,
+							  }
+							: t
+					)
+				);
 			}
 		} catch (error) {
 			console.error("Error:", error);
@@ -68,8 +101,15 @@ function TaskListComponent() {
 				<TaskComponent
 					key={task.id}
 					task={task}
-					deleteTask={() => deleteTask(task.id)}
-
+					deleteTask={() =>
+						deleteTask(task.id)
+					}
+					updateTask={(updatedTask) =>
+						updateTask(
+							task.id,
+							updatedTask
+						)
+					}
 				/>
 			))}
 		</div>

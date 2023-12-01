@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { createClient } from "@supabase/supabase-js"; // Make sure to import the useSupabase hook from your Supabase configuration
+import { REACT_APP_SUPABASE_URL, REACT_APP_SUPABASE_KEY } from "../config";
 
 type Todo = {
 	id: number;
@@ -7,11 +8,9 @@ type Todo = {
 	task: string;
 };
 
-const supabaseUrl: string = "https://onshivmcmawiknfqbcmv.supabase.co";
-const supabaseKey: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9uc2hpdm1jbWF3aWtuZnFiY212Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDEyNzA4ODksImV4cCI6MjAxNjg0Njg4OX0.vHyLFyVK_jvYJ1EaYjOJ_-YEus1xEw5NoYCgcgnS0XY";
-
+const supabaseUrl: string = REACT_APP_SUPABASE_URL;
+const supabaseKey: string = REACT_APP_SUPABASE_KEY;
 const supabase = createClient(supabaseUrl, supabaseKey);
-
 function InputForm() {
 	const [taskInput, setTaskInput] = useState("");
 
