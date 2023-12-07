@@ -29,7 +29,7 @@ This project is a simple to-do list application built with React and powered by 
 1. Clone the repository.
 2. Install dependencies using `npm install` or `yarn install`.
 3. Run the development server with `npm run dev`.
-4. Open your browser and visit `http://localhost:3000`.
+4. Open your browser and visit the address Vite provided.
 
 ## Scripts
 
